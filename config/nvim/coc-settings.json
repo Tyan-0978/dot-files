@@ -12,5 +12,11 @@
       "filetypes": ["dockercompose"],
       "rootPatterns": [".git", ".env", "docker-compose.yml", "compose.yml"]
     }
+  },
+  "[python]": {
+    "inlayHint.enable": false
+  },
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "warning"
   }
 }
