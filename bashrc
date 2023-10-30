@@ -59,19 +59,16 @@ fi
 . ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-PS1='\[\033[01;36m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]
-\[\033[0;32m\][$(date +%k:%M:%S)]\[\033[00m\] $ '
+PS1='\[\033[01;36m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\] '
+PS1+='\[\033[0;32m\][$(date +%k:%M:%S)]\[\033[00m\] '
+PS1+='
+$ '
 #if [ "$color_prompt" = yes ]; then
 #    PS1=' \[\033[01;36m\]\w\[\033[00m\] \[\033[0;32m\][$(date +%k:%M:%S)]\[\033[00m\]\n\$ '
 #else
 #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
 unset color_prompt force_color_prompt
-
-if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-    GIT_PROMPT_ONLY_IN_REPO=1
-    source "$HOME/.bash-git-prompt/gitprompt.sh"
-fi
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
