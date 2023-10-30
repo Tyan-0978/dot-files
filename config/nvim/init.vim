@@ -43,6 +43,17 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " use TAB for auto fill
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
+let g:coc_global_extensions = [
+    \'coc-json', 
+    \'coc-markdownlint',
+    \'coc-git', 
+    \'coc-sh',
+    \'coc-html',
+    \'coc-css',
+    \'coc-tsserver',
+    \'coc-clangd',
+    \'coc-pyright',
+    \'coc-rust-analyzer']
 
 " for docker-compose language server
 au FileType yaml if bufname("%") =~# "docker-compose.yml" | set ft=yaml.docker-compose | endif
