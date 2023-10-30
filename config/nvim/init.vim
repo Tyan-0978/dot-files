@@ -15,19 +15,31 @@ set ttimeoutlen=5
 "set foldmethod=syntax
 set nofoldenable
 
+" cursor
+set guicursor=n-v:block,i-c-ci-ve:ver25
+
+" buffer navigation
+map <C-J> :bprev<CR>
+map <C-K> :bnext<CR>
+map <C-Q> :bd<CR>
+
 
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 
+" airline settings
 let g:airline_theme='owo'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " use TAB for auto fill
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
@@ -39,3 +51,13 @@ let g:coc_filetype_map = {'yaml.docker-compose': 'dockercompose'}
 
 " re-map nerdtree commands
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+" close nerdtree after opening a file
+let NERDTreeQuitOnOpen=1
+
+" CtrlP
+let g:ctrlp_map = '<C-p>'
+let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*.swp
+set wildignore+=*/node_modules/*
+set wildignore+=*/__pycache__/*
