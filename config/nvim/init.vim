@@ -23,6 +23,9 @@ map <C-J> :bprev<CR>
 map <C-K> :bnext<CR>
 map <C-Q> :bd<CR>
 
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 call plug#begin()
 
