@@ -59,8 +59,11 @@ fi
 . ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-PS1='\[\033[01;36m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\] '
+PS1=''
+PS1+='
+'
 PS1+='\[\033[0;32m\][$(date +%k:%M:%S)]\[\033[00m\] '
+PS1+='\[\033[01;36m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\] '
 PS1+='
 $ '
 #if [ "$color_prompt" = yes ]; then
