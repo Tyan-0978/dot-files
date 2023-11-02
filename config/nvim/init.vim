@@ -72,6 +72,7 @@ let NERDTreeQuitOnOpen=1
 " CtrlP
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_show_hidden = 1
 set wildignore+=*.swp
 set wildignore+=*/node_modules/*
 set wildignore+=*/__pycache__/*
