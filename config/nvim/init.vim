@@ -33,6 +33,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -44,7 +45,7 @@ let g:airline_theme='owo'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" use TAB for auto fill
+" coc-nvim
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
 let g:coc_global_extensions = [
     \'coc-json', 
@@ -76,3 +77,10 @@ let g:ctrlp_show_hidden = 1
 set wildignore+=*.swp
 set wildignore+=*/node_modules/*
 set wildignore+=*/__pycache__/*
+
+" indent-guides
+nnoremap <C-i> :IndentGuidesToggle<CR>
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=darkgray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
