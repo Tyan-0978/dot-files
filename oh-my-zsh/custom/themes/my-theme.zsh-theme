@@ -1,4 +1,5 @@
-PROMPT=''
+PROMPT='
+'
 PROMPT+='%{$fg[yellow]%}[%D{%L:%M:%S}]%{$reset_color%} '
 PROMPT+='%{$fg_bold[cyan]%}%~%{$reset_color%} '
 PROMPT+='$(git_prompt_info)'
