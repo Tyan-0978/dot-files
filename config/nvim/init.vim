@@ -1,3 +1,5 @@
+let g:mapleader = ","
+let g:localmapleader = ","
 set number
 set shiftwidth=4
 set tabstop=4
@@ -8,8 +10,8 @@ set mouse=nv
 set completeopt=menuone
 set autoread
 
-set timeoutlen=10
-set ttimeoutlen=5
+set timeoutlen=1000
+set ttimeoutlen=1000
 
 " code block folding
 "set foldmethod=syntax
@@ -23,6 +25,7 @@ map <C-J> :bprev<CR>
 map <C-K> :bnext<CR>
 map <C-Q> :bd<CR>
 
+filetype plugin on
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -32,8 +35,10 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'easymotion/vim-easymotion'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -84,3 +89,16 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=darkgray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
+
+" nerd commenter
+let g:NERDCreateDefaultMappings = 1
+let g:NERDSpaceDelims = 0
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDToggleCheckAllLines = 1
+
+" easymotion
+let g:EasyMotion_do_mapping = 0
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+let g:EasyMotion_smartcase = 1
