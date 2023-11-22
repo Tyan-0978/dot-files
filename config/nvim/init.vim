@@ -36,6 +36,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
+Plug 'preservim/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'easymotion/vim-easymotion'
@@ -102,3 +103,8 @@ let g:NERDToggleCheckAllLines = 1
 let g:EasyMotion_do_mapping = 0
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 let g:EasyMotion_smartcase = 1
+
+" tagbar
+nmap <Leader>t :TagbarToggle<CR>
+let g:tagbar_ctags_bin = "/opt/homebrew/Cellar/ctags/5.8_2/bin/ctags"
+let g:tagbar_autoclose = 1
