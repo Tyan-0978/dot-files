@@ -106,5 +106,4 @@ let g:EasyMotion_smartcase = 1
 
 " tagbar
 nmap <Leader>t :TagbarToggle<CR>
-let g:tagbar_ctags_bin = "/opt/homebrew/Cellar/ctags/5.8_2/bin/ctags"
 let g:tagbar_autoclose = 1
