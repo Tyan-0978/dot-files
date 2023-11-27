@@ -10,8 +10,8 @@ set mouse=nv
 set completeopt=menuone
 set autoread
 
-set timeoutlen=1000
-set ttimeoutlen=1000
+set timeoutlen=500
+set ttimeoutlen=50
 
 " code block folding
 "set foldmethod=syntax
