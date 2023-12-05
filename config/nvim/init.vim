@@ -85,7 +85,7 @@ set wildignore+=*/node_modules/*
 set wildignore+=*/__pycache__/*
 
 " indent-guides
-nnoremap <C-i> :IndentGuidesToggle<CR>
+nnoremap <Leader>i :IndentGuidesToggle<CR>
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=darkgray
