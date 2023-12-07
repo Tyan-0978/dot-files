@@ -23,7 +23,7 @@ set guicursor=n-v:block,i-c-ci-ve:ver25
 " buffer navigation
 map <C-J> :bprev<CR>
 map <C-K> :bnext<CR>
-map <C-Q> :bd<CR>
+map <C-Q> :bp\|bd #<CR>
 
 filetype plugin on
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
