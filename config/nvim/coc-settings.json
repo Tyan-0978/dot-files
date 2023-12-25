@@ -17,6 +17,7 @@
     "inlayHint.enable": false
   },
   "python.analysis.diagnosticSeverityOverrides": {
-    "reportMissingImports": "warning"
+    "reportMissingImports": "warning",
+    "reportGeneralTypeIssues": "warning"
   }
 }
