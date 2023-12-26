@@ -21,8 +21,8 @@ set nofoldenable
 set guicursor=n-v:block,i-c-ci-ve:ver25
 
 " buffer navigation
-map <C-J> :bprev<CR>
-map <C-K> :bnext<CR>
+map <C-H> :bprev<CR>
+map <C-L> :bnext<CR>
 map <C-Q> :bp\|bd #<CR>
 
 filetype plugin on
@@ -53,6 +53,13 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " coc-nvim
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
+inoremap <expr><C-j> coc#pum#visible() ? coc#pum#prev(1) : ""
+inoremap <expr><C-k> coc#pum#visible() ? coc#pum#next(1) : ""
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+vmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
 let g:coc_global_extensions = [
     \'coc-json', 
     \'coc-markdownlint',
@@ -102,7 +109,7 @@ let g:NERDToggleCheckAllLines = 1
 
 " easymotion
 let g:EasyMotion_do_mapping = 0
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+nmap <Leader>e <Plug>(easymotion-overwin-f)
 let g:EasyMotion_smartcase = 1
 
 " tagbar
