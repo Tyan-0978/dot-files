@@ -53,8 +53,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " coc-nvim
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
-inoremap <expr><C-j> coc#pum#visible() ? coc#pum#prev(1) : ""
-inoremap <expr><C-k> coc#pum#visible() ? coc#pum#next(1) : ""
+inoremap <expr><C-k> coc#pum#visible() ? coc#pum#prev(1) : ""
+inoremap <expr><C-j> coc#pum#visible() ? coc#pum#next(1) : ""
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
