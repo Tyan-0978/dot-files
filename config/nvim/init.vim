@@ -6,7 +6,7 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 set autoindent
-set mouse=nv
+set mouse=
 set completeopt=menuone
 set autoread
 
