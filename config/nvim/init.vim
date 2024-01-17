@@ -29,6 +29,9 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+" find word
+nnoremap <Leader>w viwy/<C-r>"<CR>
+
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
