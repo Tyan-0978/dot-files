@@ -14,7 +14,6 @@ set timeoutlen=500
 set ttimeoutlen=50
 
 " code block folding
-"set foldmethod=syntax
 set nofoldenable
 
 " cursor
@@ -59,7 +58,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 vmap <leader>f  <Plug>(coc-format-selected)
-"nmap <leader>f  <Plug>(coc-format-selected)
 let g:coc_global_extensions = [
     \'coc-json', 
     \'coc-markdownlint',
@@ -77,10 +75,8 @@ au FileType yaml if bufname("%") =~# "docker-compose.yml" | set ft=yaml.docker-c
 au FileType yaml if bufname("%") =~# "compose.yml" | set ft=yaml.docker-compose | endif
 let g:coc_filetype_map = {'yaml.docker-compose': 'dockercompose'}
 
-" re-map nerdtree commands
-nnoremap <C-n> :NERDTreeToggle<CR>
-
-" close nerdtree after opening a file
+" NERDTree
+nnoremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
 " CtrlP
