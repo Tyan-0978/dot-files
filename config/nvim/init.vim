@@ -32,6 +32,12 @@ autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " find word
 nnoremap <Leader>w viwy/<C-r>"<CR>
 
+" copy/paste from system clipboard
+vnoremap <Leader>c "+y
+vnoremap <Leader>v "+p
+nnoremap <Leader>c "+yy
+nnoremap <Leader>v "+p
+
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
