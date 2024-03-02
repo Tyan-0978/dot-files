@@ -19,5 +19,9 @@
   "python.analysis.diagnosticSeverityOverrides": {
     "reportMissingImports": "warning",
     "reportGeneralTypeIssues": "warning"
+  },
+  "rust-analyzer.server.path": "~/.local/bin/rust-analyzer",
+  "rust-analyzer.server.extraEnv": {
+      "RUSTUP_TOOLCHAIN": "stable"
   }
 }
