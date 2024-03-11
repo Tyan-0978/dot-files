@@ -18,7 +18,8 @@
   },
   "python.analysis.diagnosticSeverityOverrides": {
     "reportMissingImports": "warning",
-    "reportGeneralTypeIssues": "warning"
+    "reportGeneralTypeIssues": "warning",
+    "reportOptionalSubscript": "warning"
   },
   "rust-analyzer.server.path": "~/.local/bin/rust-analyzer",
   "rust-analyzer.server.extraEnv": {
