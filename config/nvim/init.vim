@@ -55,6 +55,8 @@ Plug 'easymotion/vim-easymotion'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 
@@ -124,3 +126,7 @@ let g:EasyMotion_smartcase = 1
 " tagbar
 nmap <Leader>t :TagbarToggle<CR>
 let g:tagbar_autoclose = 1
+
+" Copilot
+imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
