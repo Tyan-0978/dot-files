@@ -126,6 +126,9 @@ let g:EasyMotion_smartcase = 1
 " tagbar
 nmap <Leader>t :TagbarToggle<CR>
 let g:tagbar_autoclose = 1
+let g:tagbar_sort = 0
+let g:tagbar_show_tag_linenumbers = 0
+let g:tagbar_foldlevel = 0
 
 " Copilot
 "imap <silent><script><expr> <C-f> copilot#Accept("\<CR>")
