@@ -28,6 +28,10 @@ map <C-Q> :bp\|bd #<CR>
 nmap <C-j> <C-e>
 nmap <C-k> <C-y>
 
+" recording macro
+nnoremap <Leader>r qa
+nnoremap <Leader>. @a
+
 filetype plugin on
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
