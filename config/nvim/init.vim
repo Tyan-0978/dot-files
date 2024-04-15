@@ -56,6 +56,7 @@ Plug 'preservim/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'easymotion/vim-easymotion'
+Plug 'psliwka/vim-smoothie'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
