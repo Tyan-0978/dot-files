@@ -29,8 +29,12 @@ nmap <C-j> <C-e>
 nmap <C-k> <C-y>
 
 " recording macro
-nnoremap <Leader>r qa
-nnoremap <Leader>. @a
+nnoremap <Leader>q qa
+nnoremap <Leader>r @a
+
+" color column
+" ref: https://www.ditig.com/publications/256-colors-cheat-sheet
+highlight ColorColumn ctermbg=240
 
 filetype plugin on
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
