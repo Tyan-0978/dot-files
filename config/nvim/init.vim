@@ -61,6 +61,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'easymotion/vim-easymotion'
 Plug 'psliwka/vim-smoothie'
+Plug 'dominikduda/vim_current_word'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -142,3 +143,6 @@ let g:tagbar_foldlevel = 0
 " Copilot
 imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+
+" vim_current_word
+highlight CurrentWord cterm=underline
