@@ -145,4 +145,5 @@ imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
 " vim_current_word
-highlight CurrentWord cterm=underline
+highlight CurrentWord cterm=underline ctermfg=white
+highlight CurrentWordTwins cterm=underline,bold ctermfg=white
