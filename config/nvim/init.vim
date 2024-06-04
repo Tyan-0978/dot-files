@@ -39,7 +39,7 @@ highlight ColorColumn ctermbg=240
 filetype plugin on
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " find word
 nnoremap <Leader>w viwy/<C-r>"<CR>
