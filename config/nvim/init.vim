@@ -103,6 +103,7 @@ let g:coc_filetype_map = {'yaml.docker-compose': 'dockercompose'}
 " NERDTree
 nnoremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
 
 " CtrlP
 let g:ctrlp_map = '<C-p>'
