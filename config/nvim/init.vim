@@ -95,7 +95,7 @@ let g:coc_global_extensions = [
     \'coc-rust-analyzer',
     \'coc-sh',
     \'coc-tsserver',
-    \'coc-vetur',
+    \'@yaegassy/coc-volar',
 \]
 
 " for docker-compose language server
