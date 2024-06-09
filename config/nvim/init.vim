@@ -45,10 +45,10 @@ autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 nnoremap <Leader>w viwy/<C-r>"<CR>
 
 " copy/paste from system clipboard
-vnoremap <Leader>c "+y
-vnoremap <Leader>v "+p
-nnoremap <Leader>c "+yy
-nnoremap <Leader>v "+p
+vnoremap <Leader>y "+y
+vnoremap <Leader>p "+p
+nnoremap <Leader>y "+yy
+nnoremap <Leader>p "+p
 
 call plug#begin()
 
@@ -84,16 +84,18 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 vmap <leader>f  <Plug>(coc-format-selected)
 let g:coc_global_extensions = [
+    \'coc-clangd',
+    \'coc-css',
+    \'coc-git',
+    \'coc-html',
     \'coc-json', 
     \'coc-markdownlint',
-    \'coc-git', 
-    \'coc-sh',
-    \'coc-html',
-    \'coc-css',
-    \'coc-tsserver',
-    \'coc-clangd',
     \'coc-pyright',
-    \'coc-rust-analyzer']
+    \'coc-rust-analyzer',
+    \'coc-sh',
+    \'coc-tsserver',
+    \'coc-vetur',
+\]
 
 " for docker-compose language server
 au FileType yaml if bufname("%") =~# "docker-compose.yml" | set ft=yaml.docker-compose | endif
