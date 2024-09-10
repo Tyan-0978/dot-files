@@ -24,5 +24,7 @@
   "rust-analyzer.server.path": "~/.local/bin/rust-analyzer",
   "rust-analyzer.server.extraEnv": {
       "RUSTUP_TOOLCHAIN": "stable"
-  }
+  },
+  "html.autoClosingTags": false,
+  "html.completion.attributeDefaultValue": "empty"
 }
