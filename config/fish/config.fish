@@ -13,4 +13,4 @@ if status is-interactive
 end
 
 
-source local.fish
+source "$__fish_config_dir/local.fish"
