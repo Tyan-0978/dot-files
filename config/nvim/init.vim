@@ -149,4 +149,4 @@ let g:copilot_no_tab_map = v:true
 
 " vim_current_word
 highlight CurrentWord cterm=underline ctermfg=white
-highlight CurrentWordTwins cterm=underline,bold ctermfg=white
+highlight CurrentWordTwins cterm=underline,bold ctermfg=white gui=underline,bold guifg=white
