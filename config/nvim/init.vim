@@ -75,6 +75,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " coc-nvim
+highlight CocMenuSel ctermbg=237 guibg=#606060
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
 inoremap <expr><C-k> coc#pum#visible() ? coc#pum#prev(1) : ""
 inoremap <expr><C-j> coc#pum#visible() ? coc#pum#next(1) : ""
