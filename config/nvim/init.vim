@@ -115,6 +115,7 @@ set wildignore+=*.swp
 set wildignore+=*/node_modules/*
 set wildignore+=*/__pycache__/*
 set wildignore+=*/.tox/*
+set wildignore+=*/env/*
 
 " indent-guides
 nnoremap <Leader>i :IndentGuidesToggle<CR>
