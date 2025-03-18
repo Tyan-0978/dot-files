@@ -56,8 +56,14 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>
 highlight ColorColumn ctermbg=240
 
 filetype plugin on
-autocmd FileType html,json,lua setlocal shiftwidth=2
-autocmd FileType javascript,typescript,vue setlocal shiftwidth=2
+
+augroup MyGroup
+    autocmd!
+    autocmd FileType html,json,lua setlocal shiftwidth=2
+    autocmd FileType javascript,typescript,vue setlocal shiftwidth=2
+    autocmd InsertEnter * set nolist
+    autocmd InsertLeave * set list
+augroup END
 
 call plug#begin()
 
@@ -94,7 +100,7 @@ let g:coc_global_extensions = [
     \'coc-css',
     \'coc-git',
     \'coc-html',
-    \'coc-json', 
+    \'coc-json',
     \'coc-markdownlint',
     \'coc-pyright',
     \'coc-rust-analyzer',
