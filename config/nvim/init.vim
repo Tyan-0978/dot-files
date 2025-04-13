@@ -59,7 +59,7 @@ filetype plugin on
 
 augroup MyGroup
     autocmd!
-    autocmd FileType html,json,lua setlocal shiftwidth=2
+    autocmd FileType html,css,json setlocal shiftwidth=2
     autocmd FileType javascript,typescript,vue setlocal shiftwidth=2
     autocmd InsertEnter * set nolist
     autocmd InsertLeave * set list
@@ -89,7 +89,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " coc-nvim
-highlight CocMenuSel ctermbg=237 guibg=#606060
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
