@@ -79,8 +79,6 @@ Plug 'psliwka/vim-smoothie'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'github/copilot.vim'
-
 call plug#end()
 
 " airline settings
@@ -154,10 +152,6 @@ let g:tagbar_autoclose = 1
 let g:tagbar_sort = 0
 let g:tagbar_show_tag_linenumbers = 0
 let g:tagbar_foldlevel = 0
-
-" Copilot
-imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")
-let g:copilot_no_tab_map = v:true
 
 " vim_current_word
 highlight CurrentWord cterm=underline ctermfg=white
