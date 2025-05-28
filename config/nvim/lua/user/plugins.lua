@@ -23,6 +23,9 @@ Plug('lukas-reineke/indent-blankline.nvim')
 Plug('numToStr/Comment.nvim')
 Plug('stevearc/aerial.nvim')
 
+-- Git utilities
+Plug('lewis6991/gitsigns.nvim')
+
 -- LSP
 Plug('neovim/nvim-lspconfig')
 Plug('mason-org/mason.nvim')
@@ -199,6 +202,9 @@ try_require('aerial').setup({
     close_on_select = true,
 })
 vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle<cr>', keymap_opts)
+
+-- gitsigns.nvim
+try_require('gitsigns').setup()
 
 -- LSP
 try_require('user.lsp').setup()
