@@ -205,6 +205,8 @@ vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle<cr>', keymap_opts)
 
 -- gitsigns.nvim
 try_require('gitsigns').setup()
+vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns blame<cr>', keymap_opts)
+vim.keymap.set('n', '<leader>gl', '<cmd>Gitsigns blame_line<cr>', keymap_opts)
 
 -- LSP
 try_require('user.lsp').setup()
