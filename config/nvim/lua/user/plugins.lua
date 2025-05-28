@@ -195,10 +195,10 @@ try_require('aerial').setup({
     backends = {'lsp', 'treesitter'},
     layout = {
         default_direction = 'prefer_right',
-        width = nil,
-        max_width = {40, 0.3},
-        min_width = 10,
+        width = 0.3,
     },
+    nerd_font = 'auto',
+    show_guides = true,
     close_on_select = true,
 })
 vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle<cr>', keymap_opts)
