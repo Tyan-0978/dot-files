@@ -22,6 +22,7 @@ Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('lukas-reineke/indent-blankline.nvim')
 Plug('numToStr/Comment.nvim')
 Plug('stevearc/aerial.nvim')
+Plug('windwp/nvim-autopairs')
 
 -- Git utilities
 Plug('lewis6991/gitsigns.nvim')
@@ -202,6 +203,9 @@ try_require('aerial').setup({
     close_on_select = true,
 })
 vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle<cr>', keymap_opts)
+
+-- nvim-autopairs
+try_require('nvim-autopairs').setup()
 
 -- gitsigns.nvim
 try_require('gitsigns').setup()
