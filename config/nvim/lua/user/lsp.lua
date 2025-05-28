@@ -119,11 +119,11 @@ local function setup_lsp_config()
                     -- setting below can be overridden by pyrightconfig.json
                     diagnosticSeverityOverrides = {
                         -- values: error/warning/information/true/false/none
-                        reportMissingImports = 'error',
                     },
                     ignore = {
                         -- file paths to ignore
                     },
+                    typeCheckingMode = 'standard',
                 },
             },
         },
