@@ -21,6 +21,7 @@ Plug('nvim-tree/nvim-tree.lua')
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('lukas-reineke/indent-blankline.nvim')
 Plug('numToStr/Comment.nvim')
+Plug('stevearc/aerial.nvim')
 
 -- LSP
 Plug('neovim/nvim-lspconfig')
@@ -185,6 +186,19 @@ try_require('ibl').setup({
 
 -- Comment.nvim
 try_require('Comment').setup()
+
+-- aerial.nvim
+try_require('aerial').setup({
+    backends = {'lsp', 'treesitter'},
+    layout = {
+        default_direction = 'prefer_right',
+        width = nil,
+        max_width = {40, 0.3},
+        min_width = 10,
+    },
+    close_on_select = true,
+})
+vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle<cr>', keymap_opts)
 
 -- LSP
 try_require('user.lsp').setup()
