@@ -107,6 +107,7 @@ local function setup_lsp_config()
 
     -- basedpyright
     vim.lsp.config('basedpyright', {
+        root_markers = {'pyproject.toml', 'pyrightconfig.json', '.venv', '.git'},
         settings = {
             basedpyright = {
                 autoSearchPaths = true,
