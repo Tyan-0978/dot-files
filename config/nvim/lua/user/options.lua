@@ -36,7 +36,11 @@ opt.ttimeoutlen = 100
 opt.updatetime = 1000
 
 -- folding
-opt.foldenable = false
+opt.foldenable = true
+opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+opt.foldlevelstart = 99
+opt.foldmethod = 'expr'
+opt.foldnestmax = 10
 
 -- highlight
 vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#555555' })
