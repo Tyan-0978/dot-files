@@ -115,10 +115,6 @@ try_require('bufferline').setup({
         right_trunc_marker = '',
         truncate_names = false,
         diagnostics = 'nvim_lsp',
-        diagnostics_indicator = function(count, level)
-            local icon = level:match('error') and 'xxx' or ''
-            return ' ' .. icon .. count
-        end,
         show_buffer_icons = false,
         show_buffer_close_icons = false,
         separator_style = 'thick',
