@@ -196,7 +196,7 @@ try_require('aerial').setup({
     backends = {'lsp', 'treesitter'},
     layout = {
         default_direction = 'prefer_right',
-        width = 0.3,
+        max_width = {60, 0.5},
     },
     nerd_font = 'auto',
     show_guides = true,
