@@ -8,37 +8,40 @@ vim.call('plug#begin')
 -- visuals
 Plug('karb94/neoscroll.nvim')
 Plug('nvim-lualine/lualine.nvim')
-Plug('akinsho/bufferline.nvim')
+Plug('akinsho/bufferline.nvim', { tag = 'v4.9.1' })
 
 -- motions
 Plug('ggandor/leap.nvim')
 
 -- files
 Plug('ibhagwan/fzf-lua')
-Plug('nvim-tree/nvim-tree.lua')
+Plug('nvim-tree/nvim-tree.lua', { tag = 'v1.12.0' })
 
 -- programming utilities
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
-Plug('lukas-reineke/indent-blankline.nvim')
+Plug('nvim-treesitter/nvim-treesitter', { branch = 'master' })
+Plug('lukas-reineke/indent-blankline.nvim', { tag = 'v3.9.0' })
 Plug('numToStr/Comment.nvim')
-Plug('stevearc/aerial.nvim')
+Plug('stevearc/aerial.nvim', { tag = 'v2.5.0' })
 Plug('windwp/nvim-autopairs')
 
 -- Git utilities
-Plug('lewis6991/gitsigns.nvim')
+Plug('lewis6991/gitsigns.nvim', { tag = 'v1.0.2' })
 
 -- LSP
-Plug('neovim/nvim-lspconfig')
-Plug('mason-org/mason.nvim')
-Plug('mason-org/mason-lspconfig.nvim')
+Plug('neovim/nvim-lspconfig', { tag = 'v2.2.0' })
+Plug('mason-org/mason.nvim', { tag = 'v2.0.0' })
+Plug('mason-org/mason-lspconfig.nvim', { tag = 'v2.0.0' })
 
-Plug('hrsh7th/nvim-cmp')
+Plug('hrsh7th/nvim-cmp', { tag = 'v0.0.2' })
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline')
 
-Plug('L3MON4D3/LuaSnip')
+Plug('L3MON4D3/LuaSnip', {
+    tag = 'v2.4.0',
+    ['do'] = 'make install_jsregexp'
+})
 Plug('saadparwaiz1/cmp_luasnip')
 
 vim.call('plug#end')
@@ -203,11 +206,9 @@ vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeToggle<cr>', keymap_opts)
 
 -- nvim-treesitter
 try_require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua', 'python', 'vim' },
     auto_install = true,
-    highlight = {
-        enable = true,
-    },
+    highlight = { enable = true },
+    indent = { enable = true },
 })
 
 -- indent-blankline.nvim
