@@ -135,10 +135,43 @@ vim.keymap.set('n', 'b[', '<cmd>BufferLineMovePrev<cr>', keymap_opts)
 try_require('leap').set_default_mappings()
 
 -- fzf.lua
+-- files/directories to ignore when searching for files
+local ignore_patterns = {
+    { value = '.git', is_dir = true },
+    { value = '.ruff_cache', is_dir = true },
+    { value = '.venv', is_dir = true },
+    { value = '__pycache__', is_dir = true },
+    { value = 'node_modules', is_dir = true },
+}
+local fzf_find_opts = {'-type', 'f'}
+local fzf_rg_opts = {'--color=never', '--hidden', '--no-ignore', '--files'}
+local fzf_fd_opts = {'--color=never', '--hidden', '--no-ignore', '--type="file"'}
+for _, pattern in ipairs(ignore_patterns) do
+    if pattern.is_dir then
+        local find_opt = string.format("-not -path '*/%s/*'", pattern.value)
+        table.insert(fzf_find_opts, find_opt)
+    else
+        local find_opt = string.format("-not -name '%s'", pattern.value)
+        table.insert(fzf_find_opts, find_opt)
+    end
+    local rg_opt = string.format("--glob='!%s'", pattern.value)
+    table.insert(fzf_rg_opts, rg_opt)
+    local fd_opt = string.format("--exclude='%s'", pattern.value)
+    table.insert(fzf_fd_opts, fd_opt)
+end
 try_require('fzf-lua').setup({
-    file_icons = false,
-    git_icons = false,
-    color_icons = false,
+    winopts = {
+        height = 0.85,
+        width = 0.9,
+    },
+    defaults = {
+        file_icons = false,
+        git_icons = false,
+        color_icons = false,
+        find_opts = table.concat(fzf_find_opts, ' '),
+        rg_opts = table.concat(fzf_rg_opts, ' '),
+        fd_opts = table.concat(fzf_fd_opts, ' '),
+    },
 })
 vim.keymap.set('n', '<c-p>', '<cmd>FzfLua files<cr>', keymap_opts)
 
