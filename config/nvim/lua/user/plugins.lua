@@ -68,6 +68,7 @@ end
 
 -- neoscroll.nvim
 try_require('neoscroll').setup({
+    mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>', 'zt', 'zz', 'zb'},
     stop_eof = false,
     easing = 'quadratic',
 })
