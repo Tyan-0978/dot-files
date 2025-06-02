@@ -1,0 +1,63 @@
+format = """
+$time\
+$directory\
+$git_branch$git_commit$git_status$git_state\
+$python
+$character"""
+add_newline = true
+
+[character]
+success_symbol = '[>](bold)'
+error_symbol = '[>](bold red)'
+vimcmd_symbol = '[>](bold)'
+vimcmd_replace_one_symbol = '[>](bold blue)'
+vimcmd_replace_symbol = '[>](bold blue)'
+vimcmd_visual_symbol = '[>](bold yellow)'
+
+[directory]
+truncation_length = 20
+truncate_to_repo = false
+read_only = ' [RO]'
+read_only_style = 'red'
+before_repo_root_style = 'dimmed'
+repo_root_style = 'bold cyan'
+
+[git_branch]
+format = '[\($branch\)]($style)'
+style = 'bold bright-yellow'
+only_attached = true
+
+[git_commit]
+style = 'bold bright-yellow'
+only_detached = true
+tag_disabled = false
+tag_symbol = ' #'
+
+[git_state]
+style = 'bright-yellow'
+
+[git_status]
+conflicted = '='
+ahead = '<<$ahead_count'
+behind = '>>$behind_count'
+diverged = '<<$ahead_count>>$behind_count'
+up_to_date = ''
+untracked = '?$count'
+stashed = '$$count'
+modified = '+$count'
+staged = '^$count'
+renamed = '->$count'
+deleted = '-$count'
+typechanged = ''
+
+[python]
+format = '[\($virtualenv $version\)]($style)'
+style = ''
+detect_extensions = []
+detect_files = []
+detect_folders = []
+
+[time]
+format = '[\[$time\] ]($style)'
+style = 'green'
+disabled = false
