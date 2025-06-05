@@ -1,1 +1,10 @@
 local.fish
+
+completions/
+conf.d/
+
+fish_variables
+
+functions/
+!functions/fish_user_key_bindings.fish
+!functions/fish_mode_prompt.fish
