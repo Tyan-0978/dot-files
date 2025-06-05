@@ -156,6 +156,7 @@ try_require('leap').set_default_mappings()
 local ignore_patterns = {
     { value = '.git', is_dir = true },
     { value = '.ruff_cache', is_dir = true },
+    { value = '.tox', is_dir = true },
     { value = '.venv', is_dir = true },
     { value = '__pycache__', is_dir = true },
     { value = 'node_modules', is_dir = true },
