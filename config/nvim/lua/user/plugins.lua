@@ -230,10 +230,18 @@ try_require('Comment').setup()
 try_require('aerial').setup({
     backends = {'lsp', 'treesitter'},
     layout = {
-        default_direction = 'prefer_right',
-        max_width = {60, 0.5},
+        default_direction = 'float',
+        min_width = 24,
+        max_width = {60, 0.6}
     },
-    nerd_font = 'auto',
+    float = {
+        relative = 'editor',
+        height = 0.7,
+    },
+    keymaps = {
+        ['<esc>'] = 'actions.close',
+    },
+    nerd_font = false,
     show_guides = true,
     close_on_select = true,
 })
