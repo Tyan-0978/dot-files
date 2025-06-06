@@ -182,23 +182,11 @@ vim.keymap.set('n', '<c-p>', '<cmd>FzfLua files<cr>', keymap_opts)
 -- nvim-tree.lua
 try_require('nvim-tree').setup({
     view = {
+        number = true,
         width = {
-            min = 24,
+            min = 32,
             max = -1,
             padding = 1,
-        },
-        float = {
-            enable = true,
-            open_win_config = function ()
-                return {
-                    relative = 'editor',
-                    border = 'rounded',
-                    width = 24,
-                    height = math.floor(vim.api.nvim_win_get_height(0) * 0.7),
-                    row = 1,
-                    col = 1,
-                }
-            end,
         },
     },
     renderer = {
@@ -263,11 +251,19 @@ try_require('aerial').setup({
     layout = {
         default_direction = 'float',
         min_width = 24,
-        max_width = {60, 0.6}
+        max_width = {60, 0.6},
+        win_opts = {
+            number = true,
+        },
     },
     float = {
         relative = 'editor',
-        height = 0.7,
+        max_height = 0.8,
+        override = function (config, _)
+            config.row = 1
+            config.col = 1
+            return config
+        end,
     },
     keymaps = {
         ['<esc>'] = 'actions.close',

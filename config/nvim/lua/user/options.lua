@@ -15,7 +15,6 @@ opt.list = true
 opt.listchars = 'tab:>-,trail:$'
 opt.mouse = ''
 opt.number = true
-opt.relativenumber = true
 opt.scrolloff = 3
 opt.shiftround = true
 opt.shiftwidth = 4
