@@ -181,8 +181,31 @@ vim.keymap.set('n', '<c-p>', '<cmd>FzfLua files<cr>', keymap_opts)
 
 -- nvim-tree.lua
 try_require('nvim-tree').setup({
+    view = {
+        width = {
+            min = 24,
+            max = -1,
+            padding = 1,
+        },
+        float = {
+            enable = true,
+            open_win_config = function ()
+                return {
+                    relative = 'editor',
+                    border = 'rounded',
+                    width = 24,
+                    height = math.floor(vim.api.nvim_win_get_height(0) * 0.7),
+                    row = 1,
+                    col = 1,
+                }
+            end,
+        },
+    },
     renderer = {
         add_trailing = true,
+        indent_markers = {
+            enable = true,
+        },
         icons = {
             show = {
                 file = false,
@@ -194,6 +217,14 @@ try_require('nvim-tree').setup({
                 diagnostics = false,
                 bookmarks = false,
             },
+        },
+    },
+    filters = {
+        git_ignored = false,
+        custom = {
+            '.ruff_cache',
+            '.venv',
+            '__pycache__',
         },
     },
     actions = {
