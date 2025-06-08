@@ -9,6 +9,7 @@ vim.call('plug#begin')
 Plug('karb94/neoscroll.nvim')
 Plug('nvim-lualine/lualine.nvim')
 Plug('akinsho/bufferline.nvim', { tag = 'v4.9.1' })
+Plug('RRethy/vim-illuminate')
 
 -- motions
 Plug('ggandor/leap.nvim')
@@ -135,6 +136,18 @@ vim.keymap.set('n', '<C-h>', '<cmd>BufferLineCyclePrev<cr>', keymap_opts)
 vim.keymap.set('n', 'b]', '<cmd>BufferLineMoveNext<cr>', keymap_opts)
 vim.keymap.set('n', 'b[', '<cmd>BufferLineMovePrev<cr>', keymap_opts)
 
+-- vim-illuminate
+local illuminate_highlight = {
+    bold = true,
+    underline = true,
+}
+vim.api.nvim_set_hl(0, 'IlluminatedWordText', illuminate_highlight)
+vim.api.nvim_set_hl(0, 'IlluminatedWordRead', illuminate_highlight)
+vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', illuminate_highlight)
+local illuminate = try_require('illuminate')
+vim.keymap.set('n', '<c-n>', illuminate.goto_next_reference, keymap_opts)
+vim.keymap.set('n', '<c-p>', illuminate.goto_prev_reference, keymap_opts)
+
 -- leap.nvim
 try_require('leap').set_default_mappings()
 
@@ -177,7 +190,7 @@ try_require('fzf-lua').setup({
         fd_opts = table.concat(fzf_fd_opts, ' '),
     },
 })
-vim.keymap.set('n', '<c-p>', '<cmd>FzfLua files<cr>', keymap_opts)
+vim.keymap.set('n', '<leader>f', '<cmd>FzfLua files<cr>', keymap_opts)
 
 -- nvim-tree.lua
 try_require('nvim-tree').setup({

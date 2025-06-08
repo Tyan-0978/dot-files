@@ -67,31 +67,9 @@ local function on_attach(client, bufnr)
     map('n', '<leader>do', vim.diagnostic.open_float, 'show diagnostic float')
 
     -- formatting
-    map({'n', 'v'}, '<leader>f', function ()
+    map({'n', 'v'}, '<leader>lf', function ()
         vim.lsp.buf.format({ async = true })
     end, 'format code')
-
-    -- highlight symbols
-    vim.api.nvim_set_hl(0, 'LspReferenceText', {
-        bold = true,
-        underline = true,
-    })
-    if client.server_capabilities.documentHighlightProvider then
-        vim.api.nvim_create_autocmd(
-            {'CursorHold', 'CursorHoldI'},
-            {
-                buffer = bufnr,
-                callback = vim.lsp.buf.document_highlight,
-            }
-        )
-        vim.api.nvim_create_autocmd(
-            {'CursorMoved', 'CursorMovedI', 'InsertLeave'},
-            {
-                buffer = bufnr,
-                callback = vim.lsp.buf.clear_references,
-            }
-        )
-    end
 end
 
 

@@ -21,6 +21,7 @@ opt.shiftwidth = 4
 opt.wildmenu = true
 opt.wildoptions = 'pum'
 opt.wrap = true
+opt.wrapscan = false
 opt.langremap = false
 opt.showmatch = false
 
