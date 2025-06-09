@@ -225,6 +225,7 @@ try_require('nvim-tree').setup({
         git_ignored = false,
         custom = {
             '.ruff_cache',
+            '.tox',
             '.venv',
             '__pycache__',
         },
